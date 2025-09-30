@@ -4,11 +4,26 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiAppExp"
+    xmlns:v="clr-namespace:MauiAppExp.Views"
     Title="MauiAppExp">
+    
+    <!-- Zakładki dolne -->
+    <TabBar>
+        <ShellContent Title="Start"
+        ContentTemplate="{DataTemplate local:MainPage}" 
+        Route="start" />
+        
+        <ShellContent
+        Title="Transakcje"
+        ContentTemplate="{DataTemplate v:TransactionPage}"
+        Route="transakcje" />
+    </TabBar>
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+    <!-- Menu boczne -->
+    <!--<FlyoutItem Title="Ustawienia" Icon="settings.png">
+        <ShellContent
+            Title="Ustawienia"
+            Route="settings"
+            ContentTemplate="{DataTemplate views:SettingsPage}" />
+    </FlyoutItem>-->
 </Shell>
